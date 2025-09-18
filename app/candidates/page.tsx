@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Candidates() {
-  const [selectedCandidate, setSelectedCandidate] = useState(null);
+  const [selectedCandidate, setSelectedCandidate] = useState<any>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
   const candidates = [
@@ -69,7 +69,7 @@ export default function Candidates() {
     }
   ];
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch(status) {
       case 'new': return 'bg-blue-100 text-blue-800';
       case 'screening': return 'bg-yellow-100 text-yellow-800';
@@ -80,7 +80,7 @@ export default function Candidates() {
     }
   };
 
-  const getScoreColor = (score) => {
+  const getScoreColor = (score: number) => {
     if (score >= 90) return 'text-green-600 bg-green-50';
     if (score >= 80) return 'text-yellow-600 bg-yellow-50';
     if (score >= 70) return 'text-orange-600 bg-orange-50';
